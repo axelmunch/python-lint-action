@@ -1,6 +1,6 @@
 # python-lint-action
 
-GitHub Action for python linting with `isort` and `black`.
+GitHub Action for Python linting with `black` and `isort`.
 
 ## Usage
 
@@ -11,6 +11,6 @@ workflow "Lint on Push" {
 }
 
 action "Lint" {
-  uses = "wrboyce/python-lint-action@master"
+  uses = "axelmunch/python-lint-action@master"
 }
 ```
