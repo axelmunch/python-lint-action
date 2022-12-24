@@ -1,16 +1,25 @@
 # python-lint-action
 
-GitHub Action for python linting with `isort` and `black`.
+GitHub Action for Python linting with `black` and `isort`.
 
-## Usage
+## Usage example
 
-```
-workflow "Lint on Push" {
-  on = "push"
-  resolves = ["Lint"]
-}
+```yml
+# .github/workflows/lint.yml
 
-action "Lint" {
-  uses = "wrboyce/python-lint-action@master"
-}
+name: Lint Action
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3.2.0
+      - name: Lint
+        uses: axelmunch/python-lint-action@v1.0.0
 ```
